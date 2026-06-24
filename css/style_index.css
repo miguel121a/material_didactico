@@ -88,3 +88,22 @@ button {
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
     transform: translateY(-4px);
 }
+footer {
+  background: black;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 48px;
+}
+
+footer h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+footer p {
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: 0.95;
+}

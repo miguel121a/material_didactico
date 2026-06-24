@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conceptos básicos de bases de datos</title>
+  <link rel="stylesheet" href="../css/conceptos.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <div class="topbar">
+      <a href="index.html" class="back-btn">← Volver</a>
+      <span class="topbar-title">Material Didáctico</span>
+    </div>
+
+    <div class="hero">
+      <span class="hero-tag">Tema 2</span>
+      <h1>Conceptos básicos de bases de datos</h1>
+      <p>Conoce los elementos fundamentales que forman toda base de datos.</p>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar-fill"></div>
+      </div>
+      <p class="progress-label">0% completado</p>
+    </div>
+
+    <div class="content">
+
+      <!-- Sección 1 -->
+      <div class="section-block">
+        <div class="section-label">Estructura</div>
+        <h2>Tablas, registros y campos</h2>
+        <p>Toda base de datos se organiza en tres elementos principales. Entenderlos es el primer paso para trabajar con cualquier sistema de datos.</p>
+        <div class="key-points">
+          <div class="key-point">
+            <span class="kp-title">Tabla</span>
+            <span class="kp-body">Conjunto de datos organizado en filas y columnas. Cada tabla representa un tema, por ejemplo: Clientes, Productos o Pedidos.</span>
+          </div>
+          <div class="key-point">
+            <span class="kp-title">Registro</span>
+            <span class="kp-body">Cada fila de la tabla. Representa una entrada única de información, por ejemplo: los datos de un cliente específico.</span>
+          </div>
+          <div class="key-point">
+            <span class="kp-title">Campo</span>
+            <span class="kp-body">Cada columna de la tabla. Define un tipo de dato concreto, por ejemplo: nombre, apellido, correo o fecha de registro.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tarjetas -->
+      <div class="cards-row">
+        <div class="mini-card">
+          <h3>Tabla</h3>
+          <p>Contenedor de información organizada en filas y columnas.</p>
+        </div>
+        <div class="mini-card">
+          <h3>Registro</h3>
+          <p>Una fila completa con todos los datos de un elemento.</p>
+        </div>
+      </div>
+
+      <!-- Sección 2 -->
+      <div class="section-block">
+        <div class="section-label">Datos</div>
+        <h2>Tipos de datos en un campo</h2>
+        <p>Cada campo debe tener asignado un tipo de dato. Esto indica qué clase de información puede almacenarse en esa columna y cómo se comporta al consultar o procesar datos.</p>
+        <div class="tipo-list">
+          <div class="tipo-item">
+            <span class="tipo-tag">Texto</span>
+            <span>Nombres, descripciones, correos electrónicos. Ej: <em>VARCHAR, TEXT</em></span>
+          </div>
+          <div class="tipo-item">
+            <span class="tipo-tag">Número</span>
+            <span>Cantidades, precios, edades. Ej: <em>INT, DECIMAL, FLOAT</em></span>
+          </div>
+          <div class="tipo-item">
+            <span class="tipo-tag">Fecha / Hora</span>
+            <span>Fechas de registro o vencimiento. Ej: <em>DATE, DATETIME</em></span>
+          </div>
+          <div class="tipo-item">
+            <span class="tipo-tag">Booleano</span>
+            <span>Valores de verdadero o falso. Ej: <em>BOOLEAN (TRUE / FALSE)</em></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cita -->
+      <div class="quote-block">
+        <p>Elegir el tipo de dato correcto garantiza un almacenamiento adecuado, evita errores y permite que la base de datos optimice sus consultas.</p>
+      </div>
+
+      <!-- Sección 3 -->
+      <div class="section-block">
+        <div class="section-label">Claves</div>
+        <h2>Clave primaria y clave foránea</h2>
+        <p>Las claves son campos especiales que permiten identificar registros y conectar tablas entre sí.</p>
+        <div class="key-points">
+          <div class="key-point">
+            <span class="kp-title">Clave primaria (Primary Key)</span>
+            <span class="kp-body">Identifica de forma única cada registro de una tabla. No puede repetirse ni estar vacía. Ejemplo: el ID de un cliente.</span>
+          </div>
+          <div class="key-point">
+            <span class="kp-title">Clave foránea (Foreign Key)</span>
+            <span class="kp-body">Campo de una tabla que hace referencia a la clave primaria de otra. Establece la relación entre tablas y mantiene la integridad de los datos.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 4 -->
+      <div class="section-block">
+        <div class="section-label">Operaciones</div>
+        <h2>Operaciones básicas: CRUD</h2>
+        <p>CRUD es el acrónimo de las cuatro operaciones fundamentales que se realizan sobre los datos. Toda aplicación que gestiona información las utiliza.</p>
+        <div class="crud-grid">
+          <div class="crud-card">
+            <span class="crud-letter">C</span>
+            <strong>Create</strong>
+            <p>Insertar nuevos registros. Comando: <em>INSERT</em></p>
+          </div>
+          <div class="crud-card">
+            <span class="crud-letter">R</span>
+            <strong>Read</strong>
+            <p>Consultar y leer datos. Comando: <em>SELECT</em></p>
+          </div>
+          <div class="crud-card">
+            <span class="crud-letter">U</span>
+            <strong>Update</strong>
+            <p>Modificar registros existentes. Comando: <em>UPDATE</em></p>
+          </div>
+          <div class="crud-card">
+            <span class="crud-letter">D</span>
+            <strong>Delete</strong>
+            <p>Eliminar registros. Comando: <em>DELETE</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="quote-block">
+        <p>CRUD representa las cuatro acciones básicas que se realizan sobre datos almacenados: crear, leer, actualizar y eliminar.</p>
+      </div>
+
+      <div class="practice-cta">
+        <h3>Practica lo que aprendiste</h3>
+        <p>Ejercicios interactivos para reforzar los conceptos de este tema.</p>
+        <a href="practica_conceptos.html" class="cta-btn">Ir a practicar</a>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    <h3>Contacto</h3>
+    <p>Carretera Huejutla – Chalahuiyapa S/N,</p>
+    <p>C.P. 43000, Huejutla de Reyes,</p>
+    <p>Hidalgo, México</p>
+    <p>789 8962088 al 91</p>
+  </footer>
+
+</body>
+</html>

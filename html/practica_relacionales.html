@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Práctica – Bases de datos relacionales</title>
+  <link rel="stylesheet" href="../css/practica_relacionales.css" />
+</head>
+<body>
+
+<div class="page">
+
+  <div class="topbar">
+    <a href="relacionales.html" class="back-btn">← Volver</a>
+    <span class="topbar-title">Práctica – Tema 3</span>
+  </div>
+
+  <div class="hero">
+    <span class="hero-tag">Zona de práctica</span>
+    <h1>Pon a prueba lo que aprendiste</h1>
+    <p>Completa las 3 dinámicas para terminar el tema.</p>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="globalBar"></div></div>
+      <span class="progress-pct" id="globalPct">0%</span>
+    </div>
+    <div class="steps-row">
+      <div class="step" id="step-dot-0">1</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-dot-1">2</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-dot-2">3</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- DINÁMICA 1 – Selección múltiple -->
+    <div class="activity-card" id="act0">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 1</span>
+        <span class="act-type">Selección múltiple</span>
+      </div>
+
+      <div class="question-block" id="q1">
+        <p class="question-text">¿Qué es una base de datos relacional?</p>
+        <div class="options" id="opts1">
+          <button class="opt-btn" data-correct="false"
+            data-reason="Las bases de datos relacionales almacenan información estructurada en tablas, no archivos multimedia. Para video y audio se usan otros tipos de almacenamiento."
+            onclick="checkMC(this,'opts1','fb1',0)">Un sistema para guardar archivos de video y audio</button>
+          <button class="opt-btn" data-correct="true"
+            onclick="checkMC(this,'opts1','fb1',0)">Una forma de guardar información organizada en tablas conectadas entre sí</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="SQL es el lenguaje que se usa para consultar bases de datos relacionales, pero no es un lenguaje de diseño web. HTML y CSS son los lenguajes para ese propósito."
+            onclick="checkMC(this,'opts1','fb1',0)">Un lenguaje de programación para diseño web</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Una red de computadoras describe una infraestructura de red, no una base de datos. Las bases de datos relacionales organizan información en tablas con relaciones entre ellas."
+            onclick="checkMC(this,'opts1','fb1',0)">Una red de computadoras en la nube</button>
+        </div>
+        <div class="feedback" id="fb1"></div>
+      </div>
+
+      <div class="question-block hidden" id="q2">
+        <p class="question-text">¿Para qué sirve la clave primaria en una tabla?</p>
+        <div class="options" id="opts2">
+          <button class="opt-btn" data-correct="false"
+            data-reason="La clave primaria no cifra datos; esa función corresponde a mecanismos de encriptación independientes. La clave primaria sirve para identificar registros de forma única."
+            onclick="checkMC(this,'opts2','fb2',0)">Para cifrar los datos de la tabla</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Conectar dos tablas es la función de la clave externa (o foránea), no de la primaria. La clave primaria opera dentro de su propia tabla."
+            onclick="checkMC(this,'opts2','fb2',0)">Para conectar dos tablas diferentes</button>
+          <button class="opt-btn" data-correct="true"
+            onclick="checkMC(this,'opts2','fb2',0)">Para identificar de forma única cada registro dentro de una tabla</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Eliminar duplicados automáticamente no es la función de la clave primaria. Lo que sí hace es impedir que se ingrese un valor repetido en ese campo, lo que previene duplicados al insertar datos."
+            onclick="checkMC(this,'opts2','fb2',0)">Para eliminar registros duplicados automáticamente</button>
+        </div>
+        <div class="feedback" id="fb2"></div>
+      </div>
+
+      <div class="question-block hidden" id="q3">
+        <p class="question-text">¿Cuál es una ventaja de las bases de datos relacionales?</p>
+        <div class="options" id="opts3">
+          <button class="opt-btn" data-correct="false"
+            data-reason="Una de las principales ventajas de las bases de datos relacionales es precisamente lo contrario: la información no se repite. Se centraliza en una tabla y se relaciona desde otras."
+            onclick="checkMC(this,'opts3','fb3',0)">La información se repite en cada tabla para mayor seguridad</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Las bases de datos relacionales están diseñadas específicamente para realizar búsquedas y filtros eficientes mediante el lenguaje SQL."
+            onclick="checkMC(this,'opts3','fb3',0)">No permiten realizar búsquedas ni filtros</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Las bases de datos relacionales pueden usarse tanto en entornos locales como en la nube; no están limitadas a funcionar sin internet."
+            onclick="checkMC(this,'opts3','fb3',0)">Solo pueden usarse sin conexión a internet</button>
+          <button class="opt-btn" data-correct="true"
+            onclick="checkMC(this,'opts3','fb3',0)">Si se modifica un dato, el cambio se refleja en toda la base de datos</button>
+        </div>
+        <div class="feedback" id="fb3"></div>
+      </div>
+
+      <div class="act-success hidden" id="success0"><p class="success-msg">Dinámica completada correctamente.</p></div>
+      <div class="act-failed hidden" id="failed0"></div>
+    </div>
+
+    <!-- DINÁMICA 2 – Unir conceptos -->
+    <div class="activity-card" id="act1">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 2</span>
+        <span class="act-type">Une cada concepto con su definición</span>
+      </div>
+      <p class="match-hint">Selecciona un concepto y luego su definición para conectarlos.</p>
+      <div class="match-area">
+        <div class="match-col">
+          <div class="match-item left-item" data-id="a" onclick="selectLeft(this)">Clave externa</div>
+          <div class="match-item left-item" data-id="b" onclick="selectLeft(this)">MySQL</div>
+          <div class="match-item left-item" data-id="c" onclick="selectLeft(this)">phpMyAdmin</div>
+          <div class="match-item left-item" data-id="d" onclick="selectLeft(this)">SQL</div>
+        </div>
+        <div class="match-col">
+          <div class="match-item right-item" data-id="b" onclick="selectRight(this)">Gestor de bases de datos gratuito y de código abierto</div>
+          <div class="match-item right-item" data-id="d" onclick="selectRight(this)">Lenguaje estándar para consultar bases de datos relacionales</div>
+          <div class="match-item right-item" data-id="a" onclick="selectRight(this)">Conecta dos tablas creando una relación lógica</div>
+          <div class="match-item right-item" data-id="c" onclick="selectRight(this)">Herramienta visual para administrar bases de datos sin código</div>
+        </div>
+      </div>
+      <div class="feedback" id="fb-match"></div>
+      <div class="match-pairs" id="matchPairs"></div>
+      <div class="act-success hidden" id="success1"><p class="success-msg">Dinámica completada correctamente.</p></div>
+      <div class="act-failed hidden" id="failed1"></div>
+    </div>
+
+    <!-- DINÁMICA 3 – Completar el espacio -->
+    <div class="activity-card" id="act2">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 3</span>
+        <span class="act-type">Completa el espacio</span>
+      </div>
+
+      <div class="fill-block" id="fill-q1">
+        <p class="question-text">Para subir una base de datos a Hostinger, primero se exporta desde phpMyAdmin en formato <span class="blank-word">____________</span>.</p>
+        <div class="fill-options" id="fill-opts1">
+          <button class="fill-btn" data-correct="false"
+            data-reason="El formato PDF es para documentos de texto e imágenes, no para bases de datos. Las bases de datos se exportan en .SQL, que contiene las instrucciones para recrear tablas y datos."
+            onclick="checkFill(this,'fill-opts1','fill-fb1',2)">.PDF</button>
+          <button class="fill-btn" data-correct="true"
+            onclick="checkFill(this,'fill-opts1','fill-fb1',2)">.SQL</button>
+          <button class="fill-btn" data-correct="false"
+            data-reason="El formato CSV guarda datos en texto plano separado por comas, pero no incluye la estructura de las tablas ni las relaciones. El formato .SQL sí contiene todo eso."
+            onclick="checkFill(this,'fill-opts1','fill-fb1',2)">.CSV</button>
+        </div>
+        <div class="feedback" id="fill-fb1"></div>
+      </div>
+
+      <div class="fill-block hidden" id="fill-q2">
+        <p class="question-text">La clave <span class="blank-word">____________</span> conecta dos tablas creando una relación lógica entre sus datos.</p>
+        <div class="fill-options" id="fill-opts2">
+          <button class="fill-btn" data-correct="false"
+            data-reason="La clave primaria identifica de forma única cada registro dentro de su propia tabla, pero no conecta tablas entre sí. Esa es la función de la clave externa."
+            onclick="checkFill(this,'fill-opts2','fill-fb2',2)">primaria</button>
+          <button class="fill-btn" data-correct="false"
+            data-reason="No existe un tipo de clave llamada 'maestra' en los conceptos vistos. La clave que conecta dos tablas se llama externa o foránea."
+            onclick="checkFill(this,'fill-opts2','fill-fb2',2)">maestra</button>
+          <button class="fill-btn" data-correct="true"
+            onclick="checkFill(this,'fill-opts2','fill-fb2',2)">externa</button>
+        </div>
+        <div class="feedback" id="fill-fb2"></div>
+      </div>
+
+      <div class="fill-block hidden" id="fill-q3">
+        <p class="question-text">MySQL se puede administrar visualmente con la herramienta <span class="blank-word">____________</span>, sin necesidad de escribir código.</p>
+        <div class="fill-options" id="fill-opts3">
+          <button class="fill-btn" data-correct="false"
+            data-reason="XAMPP es el entorno de desarrollo local que incluye el servidor web y MySQL, pero la herramienta visual para administrar la base de datos dentro de XAMPP es phpMyAdmin."
+            onclick="checkFill(this,'fill-opts3','fill-fb3',2)">XAMPP</button>
+          <button class="fill-btn" data-correct="false"
+            data-reason="Hostinger es un servicio de hospedaje en la nube, no una herramienta de administración de bases de datos. phpMyAdmin es la herramienta visual para gestionarlas."
+            onclick="checkFill(this,'fill-opts3','fill-fb3',2)">Hostinger</button>
+          <button class="fill-btn" data-correct="true"
+            onclick="checkFill(this,'fill-opts3','fill-fb3',2)">phpMyAdmin</button>
+        </div>
+        <div class="feedback" id="fill-fb3"></div>
+      </div>
+
+      <div class="act-success hidden" id="success2"><p class="success-msg">Dinámica completada correctamente.</p></div>
+      <div class="act-failed hidden" id="failed2"></div>
+    </div>
+
+    <!-- RESULTADO FINAL -->
+    <div class="final-card hidden" id="finalCard">
+      <h2 id="finalTitle">Práctica terminada</h2>
+      <p id="finalMsg">Completaste todas las dinámicas.</p>
+      <p class="final-score-label">Calificación: <span id="finalScore">0%</span></p>
+      <div class="final-btns">
+        <button class="retry-all-btn" onclick="retryAll()">Volver a intentarlo</button>
+        <a href="relacionales.html" class="back-topic-btn">← Volver al tema</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let actCompleted = [false, false, false];
+  let actScores    = [0, 0, 0];
+
+  function updateProgress() {
+    const total = actScores.reduce((a, b) => a + b, 0) / 3;
+    document.getElementById('globalBar').style.width = total + '%';
+    document.getElementById('globalPct').textContent = Math.round(total) + '%';
+    [0, 1, 2].forEach(i => {
+      const dot = document.getElementById('step-dot-' + i);
+      actCompleted[i] ? dot.classList.add('done') : dot.classList.remove('done');
+    });
+    if (actCompleted[0] && actCompleted[1] && actCompleted[2]) {
+      const pct = Math.round(total);
+      document.getElementById('finalScore').textContent = pct + '%';
+      document.getElementById('finalTitle').textContent = pct >= 70 ? 'Práctica terminada' : 'Puedes mejorar';
+      document.getElementById('finalMsg').textContent   = pct >= 70
+        ? 'Buen trabajo. Dominaste los conceptos del tema.'
+        : 'No te rindas, inténtalo de nuevo para mejorar tu calificación.';
+      document.getElementById('finalCard').classList.remove('hidden');
+    }
+  }
+
+  function disableOptions(id) {
+    document.querySelectorAll('#' + id + ' button').forEach(b => b.disabled = true);
+  }
+
+  function retryAll() {
+    actCompleted = [false, false, false];
+    actScores    = [0, 0, 0];
+    mc_current = 1; mc_correct = 0;
+    fill_current = 1; fill_correct = 0;
+    matchedPairs = 0; selectedLeft = null;
+    document.getElementById('finalCard').classList.add('hidden');
+    [0, 1, 2].forEach(i => retryAct(i));
+    updateProgress();
+  }
+
+  function retryAct(actIdx) {
+    actCompleted[actIdx] = false;
+    actScores[actIdx] = 0;
+    document.getElementById('failed'  + actIdx).classList.add('hidden');
+    document.getElementById('success' + actIdx).classList.add('hidden');
+
+    if (actIdx === 0) {
+      mc_current = 1; mc_correct = 0;
+      ['q1','q2','q3'].forEach((id, i) => {
+        const el = document.getElementById(id);
+        i === 0 ? el.classList.remove('hidden') : el.classList.add('hidden');
+        el.querySelectorAll('button').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+        const fb = document.getElementById('fb' + (i+1));
+        fb.textContent = ''; fb.className = 'feedback';
+      });
+    } else if (actIdx === 1) {
+      matchedPairs = 0; selectedLeft = null;
+      document.querySelectorAll('.left-item,.right-item').forEach(el => {
+        el.classList.remove('matched','selected','wrong-shake');
+        el.style.pointerEvents = '';
+      });
+      document.getElementById('matchPairs').innerHTML = '';
+      const fm = document.getElementById('fb-match');
+      fm.textContent = ''; fm.className = 'feedback';
+    } else if (actIdx === 2) {
+      fill_current = 1; fill_correct = 0;
+      ['fill-q1','fill-q2','fill-q3'].forEach((id, i) => {
+        const el = document.getElementById(id);
+        i === 0 ? el.classList.remove('hidden') : el.classList.add('hidden');
+        el.querySelectorAll('button').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+        const fb = el.querySelector('.feedback');
+        if (fb) { fb.textContent = ''; fb.className = 'feedback'; }
+      });
+    }
+  }
+
+  // ── Dinámica 1 ──
+  const mc_q = [null,'q1','q2','q3'];
+  let mc_current = 1, mc_correct = 0;
+
+  function checkMC(btn, optsId, fbId, actIdx) {
+    if (actCompleted[actIdx]) return;
+    const fb = document.getElementById(fbId);
+    disableOptions(optsId);
+
+    if (btn.dataset.correct === 'true') {
+      btn.classList.add('correct');
+      fb.textContent = 'Correcto.';
+      fb.className = 'feedback ok';
+      mc_correct++;
+      setTimeout(() => {
+        fb.textContent = ''; fb.className = 'feedback';
+        mc_current++;
+        if (mc_current <= 3) {
+          document.getElementById(mc_q[mc_current]).classList.remove('hidden');
+        } else {
+          const sc = Math.round((mc_correct / 3) * 100);
+          actScores[actIdx] = sc; actCompleted[actIdx] = true;
+          document.getElementById('success' + actIdx).classList.remove('hidden');
+          setTimeout(() => updateProgress(), 400);
+        }
+      }, 800);
+    } else {
+      btn.classList.add('wrong');
+      fb.innerHTML = '<span class="err-label">Incorrecto.</span> ' + btn.dataset.reason;
+      fb.className = 'feedback err';
+      setTimeout(() => {
+        document.querySelectorAll('#' + optsId + ' button').forEach(b => {
+          b.disabled = false;
+          b.classList.remove('wrong');
+        });
+      }, 600);
+    }
+  }
+
+  // ── Dinámica 3 ──
+  const fill_q = [null,'fill-q1','fill-q2','fill-q3'];
+  let fill_current = 1, fill_correct = 0;
+
+  function checkFill(btn, optsId, fbId, actIdx) {
+    if (actCompleted[actIdx]) return;
+    const fb = document.getElementById(fbId);
+    disableOptions(optsId);
+
+    if (btn.dataset.correct === 'true') {
+      btn.classList.add('correct');
+      fb.textContent = 'Correcto.';
+      fb.className = 'feedback ok';
+      fill_correct++;
+      setTimeout(() => {
+        fb.textContent = ''; fb.className = 'feedback';
+        fill_current++;
+        if (fill_current <= 3) {
+          document.getElementById(fill_q[fill_current]).classList.remove('hidden');
+        } else {
+          const sc = Math.round((fill_correct / 3) * 100);
+          actScores[actIdx] = sc; actCompleted[actIdx] = true;
+          document.getElementById('success' + actIdx).classList.remove('hidden');
+          setTimeout(() => updateProgress(), 400);
+        }
+      }, 800);
+    } else {
+      btn.classList.add('wrong');
+      fb.innerHTML = '<span class="err-label">Incorrecto.</span> ' + btn.dataset.reason;
+      fb.className = 'feedback err';
+      setTimeout(() => {
+        document.querySelectorAll('#' + optsId + ' button').forEach(b => {
+          b.disabled = false;
+          b.classList.remove('wrong');
+        });
+      }, 600);
+    }
+  }
+
+  // ── Dinámica 2 ──
+  const matchReasons = {
+    'a-b': 'Clave externa no es un gestor de base de datos. MySQL es el gestor; la clave externa es el campo que conecta dos tablas.',
+    'a-d': 'Clave externa no es un lenguaje. SQL es el lenguaje de consulta; la clave externa es un campo que referencia otra tabla.',
+    'a-c': 'Clave externa no es una herramienta de administración. phpMyAdmin es la interfaz visual; la clave externa conecta tablas.',
+    'b-d': 'MySQL es el gestor de base de datos, no el lenguaje. SQL es el lenguaje estándar para consultar bases de datos relacionales.',
+    'b-a': 'MySQL es el gestor de base de datos, no un tipo de clave. La clave externa es el campo que conecta dos tablas.',
+    'b-c': 'MySQL es el sistema gestor; phpMyAdmin es la herramienta visual que se usa para administrar MySQL sin escribir código.',
+    'c-b': 'phpMyAdmin es la herramienta visual de administración, no el gestor. MySQL es el gestor de base de datos.',
+    'c-d': 'phpMyAdmin no es un lenguaje; es una interfaz gráfica. SQL es el lenguaje estándar para consultar bases de datos.',
+    'c-a': 'phpMyAdmin es la herramienta visual, no un tipo de clave. La clave externa es el campo que relaciona dos tablas.',
+    'd-b': 'SQL es el lenguaje de consulta, no el gestor. MySQL es el sistema gestor de base de datos gratuito y de código abierto.',
+    'd-a': 'SQL es el lenguaje, no un tipo de clave. La clave externa es el campo que conecta una tabla con la clave primaria de otra.',
+    'd-c': 'SQL es el lenguaje de consulta; phpMyAdmin es la herramienta visual que permite usar MySQL sin escribir SQL directamente.',
+  };
+
+  let selectedLeft = null, matchedPairs = 0;
+  const totalPairs = 4, matchActIdx = 1;
+
+  function selectLeft(el) {
+    if (actCompleted[matchActIdx]) return;
+    if (el.classList.contains('matched')) return;
+    document.querySelectorAll('.left-item').forEach(i => i.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedLeft = el;
+    const fb = document.getElementById('fb-match');
+    fb.textContent = ''; fb.className = 'feedback';
+  }
+
+  function selectRight(el) {
+    if (!selectedLeft) return;
+    if (actCompleted[matchActIdx]) return;
+    if (el.classList.contains('matched')) return;
+
+    const fb = document.getElementById('fb-match');
+
+    if (selectedLeft.dataset.id === el.dataset.id) {
+      selectedLeft.classList.remove('selected');
+      selectedLeft.classList.add('matched');
+      el.classList.add('matched');
+
+      const pair = document.createElement('div');
+      pair.className = 'pair-line ok';
+      pair.textContent = selectedLeft.textContent + ' → ' + el.textContent;
+      document.getElementById('matchPairs').appendChild(pair);
+
+      fb.textContent = 'Correcto.'; fb.className = 'feedback ok';
+      selectedLeft = null; matchedPairs++;
+
+      if (matchedPairs === totalPairs) {
+        actScores[matchActIdx] = 100; actCompleted[matchActIdx] = true;
+        setTimeout(() => {
+          document.getElementById('success1').classList.remove('hidden');
+          setTimeout(() => updateProgress(), 400);
+        }, 600);
+      } else {
+        setTimeout(() => { fb.textContent = ''; fb.className = 'feedback'; }, 800);
+      }
+    } else {
+      selectedLeft.classList.add('wrong-shake');
+      el.classList.add('wrong-shake');
+
+      const key = selectedLeft.dataset.id + '-' + el.dataset.id;
+      const reason = matchReasons[key] || 'Esa combinación no es correcta. Revisa las definiciones del tema.';
+      fb.innerHTML = '<span class="err-label">Incorrecto.</span> ' + reason;
+      fb.className = 'feedback err';
+
+      setTimeout(() => {
+        selectedLeft.classList.remove('wrong-shake', 'selected');
+        el.classList.remove('wrong-shake');
+        selectedLeft = null;
+      }, 600);
+    }
+  }
+</script>
+
+<footer>
+  <h3>Contacto</h3>
+  <p>Carretera Huejutla – Chalahuiyapa S/N,</p>
+  <p>C.P. 43000, Huejutla de Reyes,</p>
+  <p>Hidalgo, México</p>
+  <p>789 8962088 al 91</p>
+</footer>
+
+</body>
+</html>

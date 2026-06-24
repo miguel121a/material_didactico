@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Práctica – Conceptos básicos de bases de datos</title>
+  <link rel="stylesheet" href="../css/practica_conceptos.css" />
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <a href="conceptos.html" class="back-btn">← Volver</a>
+    <span class="topbar-title">Práctica – Tema 2</span>
+  </div>
+
+  <div class="hero">
+    <span class="hero-tag">Zona de práctica</span>
+    <h1>Pon a prueba lo que aprendiste</h1>
+    <p>Completa las 3 dinámicas para terminar el tema.</p>
+    <div class="progress-wrap">
+      <div class="progress-track"><div class="progress-fill" id="globalBar"></div></div>
+      <span class="progress-pct" id="globalPct">0%</span>
+    </div>
+    <div class="steps-row">
+      <div class="step" id="step-dot-0">1</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-dot-1">2</div>
+      <div class="step-line"></div>
+      <div class="step" id="step-dot-2">3</div>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- DINÁMICA 1 – Selección múltiple -->
+    <div class="activity-card" id="act0">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 1</span>
+        <span class="act-type">Selección múltiple</span>
+      </div>
+
+      <div class="question-block" id="q1">
+        <p class="question-text">¿Cómo se llama cada fila dentro de una tabla de base de datos?</p>
+        <div class="options" id="opts1">
+          <button class="opt-btn" data-correct="false"
+            data-reason="Un campo es una columna, no una fila. Los campos definen el tipo de dato, como 'nombre' o 'correo'."
+            onclick="checkMC(this,'opts1','fb1',0)">Campo</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Columna es sinónimo de campo, no de fila. Las columnas definen qué tipo de información se guarda."
+            onclick="checkMC(this,'opts1','fb1',0)">Columna</button>
+          <button class="opt-btn" data-correct="true"
+            onclick="checkMC(this,'opts1','fb1',0)">Registro</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Un índice es una estructura auxiliar que acelera las búsquedas, no es una fila de la tabla."
+            onclick="checkMC(this,'opts1','fb1',0)">Índice</button>
+        </div>
+        <div class="feedback" id="fb1"></div>
+      </div>
+
+      <div class="question-block hidden" id="q2">
+        <p class="question-text">¿Qué tipo de dato se usaría para almacenar la edad de una persona?</p>
+        <div class="options" id="opts2">
+          <button class="opt-btn" data-correct="false"
+            data-reason="TEXT almacena cadenas de texto como nombres o descripciones. La edad es un valor numérico, no texto."
+            onclick="checkMC(this,'opts2','fb2',0)">TEXT</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="DATE almacena fechas, como una fecha de nacimiento. La edad en años es un número entero, no una fecha."
+            onclick="checkMC(this,'opts2','fb2',0)">DATE</button>
+          <button class="opt-btn" data-correct="true"
+            onclick="checkMC(this,'opts2','fb2',0)">INT</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="BOOLEAN solo puede ser verdadero o falso. La edad requiere un número entero como 18, 25 o 40."
+            onclick="checkMC(this,'opts2','fb2',0)">BOOLEAN</button>
+        </div>
+        <div class="feedback" id="fb2"></div>
+      </div>
+
+      <div class="question-block hidden" id="q3">
+        <p class="question-text">¿Qué característica tiene la clave primaria?</p>
+        <div class="options" id="opts3">
+          <button class="opt-btn" data-correct="false"
+            data-reason="La clave primaria no puede repetirse. Si dos registros tuvieran el mismo valor, no podríamos distinguirlos de forma única."
+            onclick="checkMC(this,'opts3','fb3',0)">Puede repetirse en varios registros</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="Esa es la función de la clave foránea, no de la primaria. La clave foránea es la que conecta dos tablas distintas."
+            onclick="checkMC(this,'opts3','fb3',0)">Conecta dos tablas distintas</button>
+          <button class="opt-btn" data-correct="false"
+            data-reason="La clave primaria puede ser de cualquier tipo de dato, como un número entero o un texto. No está limitada a fechas."
+            onclick="checkMC(this,'opts3','fb3',0)">Solo almacena fechas</button>
+          <button class="opt-btn" data-correct="true"
+            onclick="checkMC(this,'opts3','fb3',0)">Identifica de forma única cada registro de la tabla</button>
+        </div>
+        <div class="feedback" id="fb3"></div>
+      </div>
+
+      <div class="act-success hidden" id="success0"><p class="success-msg">Dinámica completada correctamente.</p></div>
+      <div class="act-failed hidden" id="failed0"></div>
+    </div>
+
+    <!-- DINÁMICA 2 – Unir conceptos -->
+    <div class="activity-card" id="act1">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 2</span>
+        <span class="act-type">Une cada concepto con su definición</span>
+      </div>
+      <p class="match-hint">Selecciona un comando y luego su definición para conectarlos.</p>
+      <div class="match-area">
+        <div class="match-col">
+          <div class="match-item left-item" data-id="a" onclick="selectLeft(this)">SELECT</div>
+          <div class="match-item left-item" data-id="b" onclick="selectLeft(this)">INSERT</div>
+          <div class="match-item left-item" data-id="c" onclick="selectLeft(this)">UPDATE</div>
+          <div class="match-item left-item" data-id="d" onclick="selectLeft(this)">DELETE</div>
+        </div>
+        <div class="match-col">
+          <div class="match-item right-item" data-id="c" onclick="selectRight(this)">Modifica registros existentes en una tabla</div>
+          <div class="match-item right-item" data-id="a" onclick="selectRight(this)">Consulta y recupera datos almacenados</div>
+          <div class="match-item right-item" data-id="d" onclick="selectRight(this)">Elimina registros de una tabla</div>
+          <div class="match-item right-item" data-id="b" onclick="selectRight(this)">Agrega nuevos registros a una tabla</div>
+        </div>
+      </div>
+      <div class="feedback" id="fb-match"></div>
+      <div class="match-pairs" id="matchPairs"></div>
+      <div class="act-success hidden" id="success1"><p class="success-msg">Dinámica completada correctamente.</p></div>
+      <div class="act-failed hidden" id="failed1"></div>
+    </div>
+
+    <!-- DINÁMICA 3 – Completar el espacio -->
+    <div class="activity-card" id="act2">
+      <div class="act-header">
+        <span class="act-badge">Dinámica 3</span>
+        <span class="act-type">Completa el espacio</span>
+      </div>
+
+      <div class="fill-block" id="fill-q1">
+        <p class="question-text">Las cuatro operaciones básicas sobre datos se resumen con el acrónimo <span class="blank-word">____________</span>.</p>
+        <div class="fill-options" id="fill-opts1">
+          <button class="fill-btn" data-correct="false"
+            data-reason="SQL es el lenguaje para comunicarse con bases de datos, no un acrónimo de operaciones. CRUD describe las acciones: Crear, Leer, Actualizar y Eliminar."
+            onclick="checkFill(this,'fill-opts1','fill-fb1',2)">SQL</button>
+          <button class="fill-btn" data-correct="true"
+            onclick="checkFill(this,'fill-opts1','fill-fb1',2)">CRUD</button>
+          <button class="fill-btn" data-correct="false"
+            data-reason="ACID es un conjunto de propiedades que garantizan la fiabilidad de las transacciones, no las operaciones básicas sobre datos."
+            onclick="checkFill(this,'fill-opts1','fill-fb1',2)">ACID</button>
+        </div>
+        <div class="feedback" id="fill-fb1"></div>
+      </div>
+
+      <div class="fill-block hidden" id="fill-q2">
+        <p class="question-text">La clave <span class="blank-word">____________</span> conecta una tabla con la clave primaria de otra, creando una relación entre ambas.</p>
+        <div class="fill-options" id="fill-opts2">
+          <button class="fill-btn" data-correct="false"
+            data-reason="La clave primaria identifica de forma única cada registro dentro de su propia tabla, pero no conecta tablas entre sí. Esa es la función de la clave foránea."
+            onclick="checkFill(this,'fill-opts2','fill-fb2',2)">primaria</button>
+          <button class="fill-btn" data-correct="true"
+            onclick="checkFill(this,'fill-opts2','fill-fb2',2)">foránea</button>
+          <button class="fill-btn" data-correct="false"
+            data-reason="No existe un tipo de clave llamado 'secundaria' en los conceptos vistos. La clave que conecta tablas se llama foránea."
+            onclick="checkFill(this,'fill-opts2','fill-fb2',2)">secundaria</button>
+        </div>
+        <div class="feedback" id="fill-fb2"></div>
+      </div>
+
+      <div class="fill-block hidden" id="fill-q3">
+        <p class="question-text">Cada columna de una tabla se llama <span class="blank-word">____________</span> y define el tipo de información que se almacena.</p>
+        <div class="fill-options" id="fill-opts3">
+          <button class="fill-btn" data-correct="false"
+            data-reason="El registro es una fila completa, no una columna. Un registro contiene los datos de un elemento específico, como la información de un cliente."
+            onclick="checkFill(this,'fill-opts3','fill-fb3',2)">registro</button>
+          <button class="fill-btn" data-correct="false"
+            data-reason="La tabla es el contenedor que agrupa filas y columnas. Cada columna individual dentro de esa tabla es lo que se llama campo."
+            onclick="checkFill(this,'fill-opts3','fill-fb3',2)">tabla</button>
+          <button class="fill-btn" data-correct="true"
+            onclick="checkFill(this,'fill-opts3','fill-fb3',2)">campo</button>
+        </div>
+        <div class="feedback" id="fill-fb3"></div>
+      </div>
+
+      <div class="act-success hidden" id="success2"><p class="success-msg">Dinámica completada correctamente.</p></div>
+      <div class="act-failed hidden" id="failed2"></div>
+    </div>
+
+    <!-- RESULTADO FINAL -->
+    <div class="final-card hidden" id="finalCard">
+      <h2 id="finalTitle">Práctica terminada</h2>
+      <p id="finalMsg">Completaste todas las dinámicas.</p>
+      <p class="final-score-label">Calificación: <span id="finalScore">0%</span></p>
+      <div class="final-btns">
+        <button class="retry-all-btn" onclick="retryAll()">Volver a intentarlo</button>
+        <a href="conceptos.html" class="back-topic-btn">← Volver al tema</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+  let actCompleted = [false, false, false];
+  let actScores    = [0, 0, 0];
+
+  // ── Progreso global ──
+  function updateProgress() {
+    const total = actScores.reduce((a, b) => a + b, 0) / 3;
+    document.getElementById('globalBar').style.width = total + '%';
+    document.getElementById('globalPct').textContent = Math.round(total) + '%';
+
+    [0, 1, 2].forEach(i => {
+      const dot = document.getElementById('step-dot-' + i);
+      actCompleted[i] ? dot.classList.add('done') : dot.classList.remove('done');
+    });
+
+    if (actCompleted[0] && actCompleted[1] && actCompleted[2]) {
+      const pct = Math.round(total);
+      document.getElementById('finalScore').textContent = pct + '%';
+      document.getElementById('finalTitle').textContent = pct >= 70 ? 'Práctica terminada' : 'Puedes mejorar';
+      document.getElementById('finalMsg').textContent   = pct >= 70
+        ? 'Buen trabajo. Dominaste los conceptos del tema.'
+        : 'No te rindas, inténtalo de nuevo para mejorar tu calificación.';
+      document.getElementById('finalCard').classList.remove('hidden');
+    }
+  }
+
+  function disableOptions(id) {
+    document.querySelectorAll('#' + id + ' button').forEach(b => b.disabled = true);
+  }
+
+  function enableOptions(id) {
+    document.querySelectorAll('#' + id + ' button').forEach(b => {
+      b.disabled = false;
+      b.classList.remove('wrong');
+    });
+  }
+
+  function retryAll() {
+    actCompleted = [false, false, false];
+    actScores    = [0, 0, 0];
+    mc_current = 1; mc_correct = 0;
+    fill_current = 1; fill_correct = 0;
+    matchedPairs = 0; selectedLeft = null;
+    document.getElementById('finalCard').classList.add('hidden');
+    [0, 1, 2].forEach(i => retryAct(i));
+    updateProgress();
+  }
+
+  function retryAct(actIdx) {
+    actCompleted[actIdx] = false;
+    actScores[actIdx] = 0;
+
+    document.getElementById('failed' + actIdx).classList.add('hidden');
+    document.getElementById('success' + actIdx).classList.add('hidden');
+
+    if (actIdx === 0) {
+      mc_current = 1; mc_correct = 0;
+      ['q1','q2','q3'].forEach((id, i) => {
+        const el = document.getElementById(id);
+        i === 0 ? el.classList.remove('hidden') : el.classList.add('hidden');
+        el.querySelectorAll('button').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+        const fb = document.getElementById('fb' + (i+1));
+        fb.textContent = ''; fb.className = 'feedback';
+      });
+    } else if (actIdx === 1) {
+      matchedPairs = 0; selectedLeft = null;
+      document.querySelectorAll('.left-item,.right-item').forEach(el => {
+        el.classList.remove('matched','selected','wrong-shake');
+        el.style.pointerEvents = '';
+      });
+      document.getElementById('matchPairs').innerHTML = '';
+      const fm = document.getElementById('fb-match');
+      fm.textContent = ''; fm.className = 'feedback';
+    } else if (actIdx === 2) {
+      fill_current = 1; fill_correct = 0;
+      ['fill-q1','fill-q2','fill-q3'].forEach((id, i) => {
+        const el = document.getElementById(id);
+        i === 0 ? el.classList.remove('hidden') : el.classList.add('hidden');
+        el.querySelectorAll('button').forEach(b => { b.disabled = false; b.classList.remove('correct','wrong'); });
+        const fb = el.querySelector('.feedback');
+        if (fb) { fb.textContent = ''; fb.className = 'feedback'; }
+      });
+    }
+  }
+
+  // ── Dinámica 1: selección múltiple ──
+  const mc_q = [null,'q1','q2','q3'];
+  let mc_current = 1, mc_correct = 0;
+
+  function checkMC(btn, optsId, fbId, actIdx) {
+    if (actCompleted[actIdx]) return;
+    const fb = document.getElementById(fbId);
+    disableOptions(optsId);
+
+    if (btn.dataset.correct === 'true') {
+      btn.classList.add('correct');
+      fb.textContent = 'Correcto.';
+      fb.className = 'feedback ok';
+      mc_correct++;
+      setTimeout(() => {
+        fb.textContent = ''; fb.className = 'feedback';
+        mc_current++;
+        if (mc_current <= 3) {
+          document.getElementById(mc_q[mc_current]).classList.remove('hidden');
+        } else {
+          const sc = Math.round((mc_correct / 3) * 100);
+          actScores[actIdx] = sc;
+          actCompleted[actIdx] = true;
+          document.getElementById('success' + actIdx).classList.remove('hidden');
+          setTimeout(() => updateProgress(), 400);
+        }
+      }, 800);
+    } else {
+      btn.classList.add('wrong');
+      // Mensaje de error con razón, persiste hasta próximo intento
+      fb.innerHTML = '<span class="err-label">Incorrecto.</span> ' + btn.dataset.reason;
+      fb.className = 'feedback err';
+      // Rehabilitar botones (menos el incorrecto que ya se marcó) para que el alumno reintente
+      setTimeout(() => {
+        document.querySelectorAll('#' + optsId + ' button').forEach(b => {
+          b.disabled = false;
+          if (b !== btn) b.classList.remove('wrong');
+        });
+        btn.classList.remove('wrong');
+        btn.disabled = false;
+        // El feedback permanece visible hasta que se pulse otra opción
+      }, 600);
+    }
+  }
+
+  // ── Dinámica 3: completar el espacio ──
+  const fill_q = [null,'fill-q1','fill-q2','fill-q3'];
+  let fill_current = 1, fill_correct = 0;
+
+  function checkFill(btn, optsId, fbId, actIdx) {
+    if (actCompleted[actIdx]) return;
+    const fb = document.getElementById(fbId);
+    disableOptions(optsId);
+
+    if (btn.dataset.correct === 'true') {
+      btn.classList.add('correct');
+      fb.textContent = 'Correcto.';
+      fb.className = 'feedback ok';
+      fill_correct++;
+      setTimeout(() => {
+        fb.textContent = ''; fb.className = 'feedback';
+        fill_current++;
+        if (fill_current <= 3) {
+          document.getElementById(fill_q[fill_current]).classList.remove('hidden');
+        } else {
+          const sc = Math.round((fill_correct / 3) * 100);
+          actScores[actIdx] = sc;
+          actCompleted[actIdx] = true;
+          document.getElementById('success' + actIdx).classList.remove('hidden');
+          setTimeout(() => updateProgress(), 400);
+        }
+      }, 800);
+    } else {
+      btn.classList.add('wrong');
+      fb.innerHTML = '<span class="err-label">Incorrecto.</span> ' + btn.dataset.reason;
+      fb.className = 'feedback err';
+      setTimeout(() => {
+        document.querySelectorAll('#' + optsId + ' button').forEach(b => {
+          b.disabled = false;
+          b.classList.remove('wrong');
+        });
+      }, 600);
+    }
+  }
+
+  // ── Dinámica 2: unir conceptos ──
+  const matchReasons = {
+    // key: leftId + '-' + rightId  → razón de por qué está mal
+    'a-b': 'SELECT consulta datos, no los agrega. INSERT es el comando que agrega nuevos registros.',
+    'a-c': 'SELECT consulta datos, no los modifica. UPDATE es el que actualiza registros existentes.',
+    'a-d': 'SELECT consulta datos, no los elimina. DELETE es el comando para eliminar registros.',
+    'b-a': 'INSERT agrega registros nuevos, no consulta. SELECT es el comando para recuperar datos.',
+    'b-c': 'INSERT agrega registros, no los modifica. UPDATE es el que cambia valores en registros existentes.',
+    'b-d': 'INSERT agrega registros, no los elimina. DELETE es el comando para eliminar.',
+    'c-a': 'UPDATE modifica registros existentes, no consulta. SELECT es el comando de consulta.',
+    'c-b': 'UPDATE modifica registros, no agrega nuevos. INSERT es el que inserta datos nuevos.',
+    'c-d': 'UPDATE modifica registros, no los elimina. DELETE es el comando para eliminar.',
+    'd-a': 'DELETE elimina registros, no los consulta. SELECT es el comando de consulta.',
+    'd-b': 'DELETE elimina registros, no agrega nuevos. INSERT es el que inserta datos.',
+    'd-c': 'DELETE elimina registros, no los modifica. UPDATE es el que actualiza valores.',
+  };
+
+  let selectedLeft = null, matchedPairs = 0;
+  const totalPairs = 4, matchActIdx = 1;
+
+  function selectLeft(el) {
+    if (actCompleted[matchActIdx]) return;
+    if (el.classList.contains('matched')) return;
+    document.querySelectorAll('.left-item').forEach(i => i.classList.remove('selected'));
+    el.classList.add('selected');
+    selectedLeft = el;
+    // Limpiar feedback al seleccionar de nuevo
+    const fb = document.getElementById('fb-match');
+    fb.textContent = ''; fb.className = 'feedback';
+  }
+
+  function selectRight(el) {
+    if (!selectedLeft) return;
+    if (actCompleted[matchActIdx]) return;
+    if (el.classList.contains('matched')) return;
+
+    const fb = document.getElementById('fb-match');
+
+    if (selectedLeft.dataset.id === el.dataset.id) {
+      selectedLeft.classList.remove('selected');
+      selectedLeft.classList.add('matched');
+      el.classList.add('matched');
+
+      const pair = document.createElement('div');
+      pair.className = 'pair-line ok';
+      pair.textContent = selectedLeft.textContent + ' → ' + el.textContent;
+      document.getElementById('matchPairs').appendChild(pair);
+
+      fb.textContent = 'Correcto.'; fb.className = 'feedback ok';
+      selectedLeft = null;
+      matchedPairs++;
+
+      if (matchedPairs === totalPairs) {
+        actScores[matchActIdx] = 100;
+        actCompleted[matchActIdx] = true;
+        setTimeout(() => {
+          document.getElementById('success1').classList.remove('hidden');
+          setTimeout(() => updateProgress(), 400);
+        }, 600);
+      } else {
+        setTimeout(() => { fb.textContent = ''; fb.className = 'feedback'; }, 800);
+      }
+    } else {
+      selectedLeft.classList.add('wrong-shake');
+      el.classList.add('wrong-shake');
+
+      const key = selectedLeft.dataset.id + '-' + el.dataset.id;
+      const reason = matchReasons[key] || 'Esa combinación no es correcta. Revisa los comandos CRUD en el tema.';
+      fb.innerHTML = '<span class="err-label">Incorrecto.</span> ' + reason;
+      fb.className = 'feedback err';
+
+      setTimeout(() => {
+        selectedLeft.classList.remove('wrong-shake', 'selected');
+        el.classList.remove('wrong-shake');
+        selectedLeft = null;
+        // El feedback persiste hasta el próximo intento (selectLeft lo limpia)
+      }, 600);
+    }
+  }
+</script>
+
+<footer>
+  <h3>Contacto</h3>
+  <p>Carretera Huejutla – Chalahuiyapa S/N,</p>
+  <p>C.P. 43000, Huejutla de Reyes,</p>
+  <p>Hidalgo, México</p>
+  <p>789 8962088 al 91</p>
+</footer>
+
+</body>
+</html>
