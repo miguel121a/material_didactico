@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bases de Datos No Relacionales en la Nube</title>
+    <link rel="stylesheet" href="../css/style_temas.css">
+</head>
+<body>
+    <header>
+        <p>Unidad II</p>
+        <h2>Bases de datos no relacionales</h2>
+        <p>
+            Las bases de datos no relacionales son sistemas de almacenamiento que organizan la información en estructuras flexibles como documentos, grafos o pares clave-valor, diseñados para manejar grandes volúmenes de datos variables sin la rigidez de un esquema fijo.
+        </p>
+        <nav class="subnav">
+            <ul>
+                <li><a href="bd_no_relacionales.html" class="activo">Bases de Datos No Relacionales</a></li>
+                <li><a href="creacion_no_relacionales.html">Creación de Bases de Datos No Relacionales</a></li>
+                <li><a href="#">Manipulación de Datos No Relacionales</a></li>
+                <li><a href="#">Administración de Bases de Datos No Relacionales</a></li>
+                <li><a href="#">Práctica</a></li>
+            </ul>
+        </nav>
+        <a href="index.html" class="back-btn">← Volver</a>
+    </header>
+    <main>
+        <div class="temas"> <!-- Bases de Datos No Relacionales -->
+            <h2>Bases de Datos No Relacionales</h2>
+            <p>Las bases de datos no relacionales, también conocidas como <strong>NoSQL</strong>, forman una alternativa a las bases de datos relacionales tradicionales. No organizan la información en tablas compuestas por filas y columnas, sino que emplean diferentes modelos de almacenamiento, como documentos, pares clave-valor, grafos o familias de columnas. Esta característica les permite adaptarse con mayor facilidad a distintos tipos de información y necesidades de almacenamiento.</p>
+            <p>Las bases de datos NoSQL son especialmente adecuadas para aplicaciones que requieren almacenar grandes volúmenes de información, manejar datos que cambian constantemente o trabajar con estructuras de datos variadas. </p>
+            <p>El uso de bases de datos no relacionales ofrece diversas ventajas, entre las que destacan las siguientes:</p>
+            <ul class="lista">
+                <li><strong>Organización de grandes volúmenes de datos</strong></li>
+                <li><strong>Flexibilidad para la expansión de la base de datos</strong></li>
+                <li><strong>Manejo de diferentes tipos de datos</strong></li>
+                <li><strong>Diseñadas para entornos en la nube</strong></li>
+            </ul>
+            <p>
+                En la actualidad, las bases de datos no relacionales representan una opción ampliamente utilizada para el desarrollo de aplicaciones modernas, especialmente aquellas que requieren escalabilidad, flexibilidad y un manejo eficiente de grandes volúmenes de información.
+            </p>
+            <h3>Tipos de gestores de bases de datos no relacionales</h3>
+            <p>
+                Las bases de datos no relacionales pueden clasificarse en diferentes categorías según la forma en que almacenan y organizan la información. Cada tipo está diseñado para resolver necesidades específicas y ofrecer un mejor rendimiento en determinados escenarios de uso. La elección de uno u otro dependerá de los requerimientos del proyecto y de la naturaleza de los datos que se administrarán.
+            </p>
+            <ul li class="lista">
+                <li>
+                    <strong>Base de datos orientadas a documentos</strong>
+                    <p>
+                        Almacena la información en documentos, generalmente en formatos como JSON o BSON. Cada documento puede contener diferentes estructuras de datos, lo que proporciona una gran flexibilidad para almacenar información variada sin necesidad de definir un esquema rígido.
+                    </p>
+                </li>
+                <li>
+                    <strong>Base de datos orientadas a columnas</strong>
+                    <p>
+                        Almacenan la información agrupando los datos por columnas en lugar de hacerlo por filas, como ocurre en las bases de datos relacionales. Este enfoque permite realizar consultas y análisis sobre grandes volúmenes de información de manera eficiente.
+                    </p>
+                </li>
+                <li>
+                    <strong>Base de datos orientadas a grafos</strong>
+                    <p>
+                        Representan relaciones entre diferentes elementos de información. Utilizan nodos para representar entidades y conexiones para representar las relaciones entre ellas.
+                        Este modelo resulta especialmente útil cuando es necesario analizar conexiones complejas entre datos, como ocurre en redes sociales, sistemas de recomendación, mapas de rutas o detección de fraudes.
+                    </p>
+                </li>
+                <li>
+                    <strong>Base de datos orientadas a objetos</strong>
+                    <p>
+                        Almacenan la información en forma de objetos, siguiendo principios similares a los utilizados en la programación orientada a objetos. Los datos y sus comportamientos pueden almacenarse juntos, facilitando la integración con aplicaciones desarrolladas bajo este paradigma.
+                    </p>
+                </li>
+                <li>
+                    <strong>Base de datos clave-valor</strong>
+                    <p>
+                        En este modelo, cada dato se almacena mediante una clave única asociada a un valor. Su estructura simple permite realizar búsquedas extremadamente rápidas.
+                    </p>
+                </li>
+                <p>
+                    Cada tipo de gestor de base de datos ofrece ventajas particulares según el problema que se busca resolver. Por ello, antes de seleccionar una tecnología, es importante analizar factores como el volumen de información, la complejidad de los datos, la frecuencia de acceso, las necesidades de escalabilidad y el rendimiento esperado. Una elección adecuada permitirá optimizar el almacenamiento y procesamiento de la información dentro de la aplicación.
+                </p>
+                <p>
+                    Existen diversos sistemas gestores de bases de datos que permiten implementar este tipo de soluciones.
+                    A continuación, se presentan algunos de los más utilizados:
+                </p>
+                <div style="display: flex; justify-content: space-around; margin-top: 20px;">
+                    <p style="color: #47A248"><strong>MongoDB</strong></p>
+                    <p style="color: #1287B1"><strong>Cassandra</strong></p>
+                    <p style="color: #EA2328"><strong>CouchBase</strong></p>
+                    <p style="color: #008A5E"><strong>Neo4j</strong></p>
+                </div>
+        </div>
+    </main>
+    <footer>
+        <h3>Contacto</h3>
+        <p>Carretera Huejutla – Chalahuiyapa S/N,</p>
+        <p>C.P. 43000, Huejutla de Reyes,</p>
+        <p>Hidalgo, México</p>
+        <p>789 8962088 al 91</p>
+    </footer>
+</body>
+</html>
